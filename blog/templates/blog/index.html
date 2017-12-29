@@ -1,3 +1,18 @@
 {% extends 'base.html' %}
-{% block title %}Portfolio{% endblock %}
-{% block content %}<h1>Blog</h1>{% endblock %}
+{% block title %}Blog{% endblock %}
+{% block content %}
+    {% for blog in blogs %}
+        <div class="well">
+            <h2>{{ blog.title }} ({{ blog.published_date }})</h2>
+            {{ blog.content }}
+            <br/>
+            {% for tag in blog.tags.all %}
+                {{ tag }}
+            {% endfor %}
+        </div>
+    {% empty %}
+        <div class="well">
+            <h2>No blogs available.</h2>
+        </div>
+    {% endfor %}
+{% endblock %}

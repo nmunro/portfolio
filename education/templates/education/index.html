@@ -8,5 +8,9 @@
             <h2>{{ est.institution }} ({{ est.enrolled }} - {{ est.completed }})</h2>
             <h2>{{ est.qualification }} {{ est.course }}</h2>
         </div>
+    {% empty %}
+        <div class="well">
+            <h2>No qualifications.</h2>
+        </div>
     {% endfor %}
 {% endblock %}
