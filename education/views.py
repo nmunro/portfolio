@@ -1,5 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
+from .models import Education
+
 
 def index(request):
-    return render(request, 'education/index.html')
+    l = list(Education.objects.all().order_by('-completed'))
+    return render(request, 'education/index.html', {"education": l})
