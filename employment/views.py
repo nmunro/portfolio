@@ -1,5 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Employer
 
 def index(request):
-    return render(request, 'employment/index.html')
+    def tmp(em):
+        if em.ended == None:
+            em.ended = "Present"
+        return em
+
+    l = list(map(tmp, Employer.objects.all().order_by('-started')))
+    return render(request, 'employment/index.html', {"employers": l})
