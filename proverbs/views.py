@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Proverb
 
 def index(request):
-    return render(request, 'proverbs/index.html')
+    proverbs = list(Proverb.objects.all())
+    return render(request, 'proverbs/index.html', {'proverbs': proverbs})
