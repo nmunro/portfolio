@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
+    {% load static %}
     {% load bootstrap3 %}
     {% bootstrap_css %}
+
     <head>
         <title>NMunro | {% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static "/css/solarized-dark-theme.css" %}"/>
     </head>
 
     <body>
