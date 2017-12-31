@@ -3,4 +3,4 @@ from .models import Proverb
 
 def index(request):
     proverbs = list(Proverb.objects.all())
-    return render(request, 'proverbs/index.html', {'proverbs': proverbs})
+    return render(request, 'proverbs/index.html', {'proverbs': proverbs, 'active': 'proverbs'})

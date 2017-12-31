@@ -3,4 +3,4 @@ from .models import Blog
 
 def index(request):
     blogs = list(Blog.objects.all())
-    return render(request, 'blog/index.html', {'blogs': blogs})
+    return render(request, 'blog/index.html', {'blogs': blogs, 'active': 'blog'})

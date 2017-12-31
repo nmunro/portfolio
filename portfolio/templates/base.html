@@ -24,10 +24,29 @@
 
                 <div class="collapse navbar-collapse" id="navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/education">Education</a></li>
-                        <li><a href="/employment">Employment</a></li>
-                        <li><a href="/proverbs">Proverbs</a></li>
+                        {% if active == "blog" %}
+                            <li class="active"><a href="/blog">Blog</a></li>
+                        {% else %}
+                            <li><a href="/blog">Blog</a></li>
+                        {% endif %}
+
+                        {% if active == "education" %}
+                            <li class="active"><a href="/education">Education</a></li>
+                        {% else %}
+                            <li><a href="/education">Education</a></li>
+                        {% endif %}
+
+                        {% if active == "employment" %}
+                            <li class="active"><a href="/employment">Employment</a></li>
+                        {% else %}
+                            <li><a href="/employment">Employment</a></li>
+                        {% endif %}
+
+                        {% if active == "proverbs" %}
+                            <li class="active"><a href="/proverbs">Proverbs</a></li>
+                        {% else %}
+                            <li><a href="/proverbs">Proverbs</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
