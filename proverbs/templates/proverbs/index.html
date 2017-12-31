@@ -1,13 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}Proverbs{% endblock %}
 {% block content %}
-    {% for proverb in proverbs %}
-        <div class="well">
-            {{ forloop.counter }}: {{ proverb.content }}
-        </div>
-    {% empty %}
-        <div class="well">
+    <div class="well">
+        {% for proverb in proverbs %}
+            <h5>{{ forloop.counter }}: {{ proverb.content }}</h5>
+        {% empty %}
             <h2>No proverbs.</h2>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 {% endblock %}
