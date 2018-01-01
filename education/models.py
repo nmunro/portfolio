@@ -17,6 +17,7 @@ class Education(models.Model):
     course = models.CharField(max_length=255)
     enrolled = models.DateField()
     completed = models.DateField()    
+    description = models.TextField()
 
     def __str__(self):
         return self.institution
