@@ -5,8 +5,8 @@
 {% block content %}
     {% for est in education %}
         <div class="well">
-            <h2>{{ est.institution }} ({{ est.enrolled }} - {{ est.completed }})</h2>
-            <h2>{{ est.qualification }} {{ est.course }}</h2>
+            <h2>{{ est.qualification }} {{ est.course }}&nbsp;|&nbsp;{{ est.institution }} ({{ est.enrolled|date:"SHORT_DATE_FORMAT" }} - {{ est.completed|date:"SHORT_DATE_FORMAT" }})</h2>
+            {{ est.description }}
         </div>
     {% empty %}
         <div class="well">
