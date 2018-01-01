@@ -10,7 +10,10 @@ class Employer(models.Model):
     description = models.TextField()
     started = models.DateField()
     ended = models.DateField(null=True, blank=True)
-    current = models.BooleanField()
+
+    @property
+    def current(self):
+        return self.ended == None
 
     def __str__(self):
         return self.company
