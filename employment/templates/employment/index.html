@@ -3,7 +3,10 @@
 {% block content %}
     {% for em in employers %}
         <div class="well">
-            <h2>{{ em }} ({{ em.started }} - {{ em.ended }})</h2>
+            <h2>{{ em }} ({{ em.started|date:"SHORT_DATE_FORMAT" }} - {{ em.ended|date:"SHORT_DATE_FORMAT" }})</h2>
+            {% autoescape off %}
+                {{ em.description }}
+            {% endautoescape %}
         </div>
     {% empty %}
         <div class="well">
